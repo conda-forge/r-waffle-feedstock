@@ -45,7 +45,7 @@ test:
 
 about:
   home: https://github.com/hrbrmstr/waffle/tree/cran
-  license: GPL (>= 2)
+  license: GPL-2.0-or-later
   summary: Square pie charts (a.k.a. waffle charts) can be used to communicate parts of a whole
     for categorical quantities. To emulate the percentage view of a pie chart, a 10x10
     grid should be used with each square representing 1% of the total. Modern uses of
