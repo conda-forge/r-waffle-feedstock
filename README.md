@@ -3,7 +3,7 @@ About r-waffle
 
 Home: https://github.com/hrbrmstr/waffle/tree/cran
 
-Package license: GPL (>= 2)
+Package license: GPL-2.0-or-later
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-waffle-feedstock/blob/master/LICENSE.txt)
 
