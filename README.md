@@ -5,7 +5,7 @@ Home: https://github.com/hrbrmstr/waffle/tree/cran
 
 Package license: GPL-2.0-or-later
 
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-waffle-feedstock/blob/master/LICENSE.txt)
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-waffle-feedstock/blob/main/LICENSE.txt)
 
 Summary: Square pie charts (a.k.a. waffle charts) can be used to communicate parts of a whole for categorical quantities. To emulate the percentage view of a pie chart, a 10x10 grid should be used with each square representing 1% of the total. Modern uses of waffle charts do not necessarily adhere to this rule and can be created with a grid of any rectangular shape. Best practices suggest keeping the number of categories small, just as should be done when creating pie charts. Tools are provided to create waffle charts as well as stitch them together, and to use glyphs for making isotype pictograms.
 
@@ -15,8 +15,8 @@ Current build status
 
 <table><tr><td>All platforms:</td>
     <td>
-      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=2507&branchName=master">
-        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-waffle-feedstock?branchName=master">
+      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=2507&branchName=main">
+        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/r-waffle-feedstock?branchName=main">
       </a>
     </td>
   </tr>
@@ -39,23 +39,49 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `r-waffle` can be installed with:
+Once the `conda-forge` channel has been enabled, `r-waffle` can be installed with `conda`:
 
 ```
 conda install r-waffle
 ```
 
-It is possible to list all of the versions of `r-waffle` available on your platform with:
+or with `mamba`:
+
+```
+mamba install r-waffle
+```
+
+It is possible to list all of the versions of `r-waffle` available on your platform with `conda`:
 
 ```
 conda search r-waffle --channel conda-forge
+```
+
+or with `mamba`:
+
+```
+mamba search r-waffle --channel conda-forge
+```
+
+Alternatively, `mamba repoquery` may provide more information:
+
+```
+# Search all versions available on your platform:
+mamba repoquery search r-waffle --channel conda-forge
+
+# List packages depending on `r-waffle`:
+mamba repoquery whoneeds r-waffle --channel conda-forge
+
+# List dependencies of `r-waffle`:
+mamba repoquery depends r-waffle --channel conda-forge
 ```
 
 
 About conda-forge
 =================
 
-[![Powered by NumFOCUS](https://img.shields.io/badge/powered%20by-NumFOCUS-orange.svg?style=flat&colorA=E1523D&colorB=007D8A)](http://numfocus.org)
+[![Powered by
+NumFOCUS](https://img.shields.io/badge/powered%20by-NumFOCUS-orange.svg?style=flat&colorA=E1523D&colorB=007D8A)](https://numfocus.org)
 
 conda-forge is a community-led conda channel of installable packages.
 In order to provide high-quality builds, the process has been automated into the
@@ -65,10 +91,12 @@ for each of the installable packages. Such a repository is known as a *feedstock
 A feedstock is made up of a conda recipe (the instructions on what and how to build
 the package) and the necessary configurations for automatic building using freely
 available continuous integration services. Thanks to the awesome service provided by
-[CircleCI](https://circleci.com/), [AppVeyor](https://www.appveyor.com/)
-and [TravisCI](https://travis-ci.com/) it is possible to build and upload installable
-packages to the [conda-forge](https://anaconda.org/conda-forge)
-[Anaconda-Cloud](https://anaconda.org/) channel for Linux, Windows and OSX respectively.
+[Azure](https://azure.microsoft.com/en-us/services/devops/), [GitHub](https://github.com/),
+[CircleCI](https://circleci.com/), [AppVeyor](https://www.appveyor.com/),
+[Drone](https://cloud.drone.io/welcome), and [TravisCI](https://travis-ci.com/)
+it is possible to build and upload installable packages to the
+[conda-forge](https://anaconda.org/conda-forge) [Anaconda-Cloud](https://anaconda.org/)
+channel for Linux, Windows and OSX respectively.
 
 To manage the continuous integration and simplify feedstock maintenance
 [conda-smithy](https://github.com/conda-forge/conda-smithy) has been developed.
